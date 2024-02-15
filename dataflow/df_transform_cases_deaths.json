@@ -53,7 +53,10 @@
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields",
 				"SelectOnlyRequiredFields pivot(groupBy(country,",
-				"          country_code),",
+				"          country_code,",
+				"          population,",
+				"          source,",
+				"          reported_date),",
 				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> PivotCounts"
 			]
