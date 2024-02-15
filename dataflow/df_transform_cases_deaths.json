@@ -38,8 +38,8 @@
 				"     ignoreNoFilesFound: false) ~> CasesAndDeathsSource",
 				"CasesAndDeathsSource filter(continent == 'Europe' && not(isNull(country_code))) ~> FilterEuropeOnly",
 				"FilterEuropeOnly select(mapColumn(",
-				"          each(match(ERROR_FUNCTION('')),",
-				"               ERROR_FUNCTION('') = $$)",
+				"          each(match(true()),",
+				"               'cases_' + $$ = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields"
