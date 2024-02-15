@@ -43,7 +43,9 @@
 				"          population,",
 				"          indicator,",
 				"          daily_count,",
-				"          source",
+				"          source,",
+				"          each(match(name == 'date'),",
+				"               'reported' + '_date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields"
