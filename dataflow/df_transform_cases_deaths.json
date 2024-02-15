@@ -10,6 +10,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "CasesAndDeathsSource"
+				},
+				{
+					"name": "source1"
 				}
 			],
 			"sinks": [],
@@ -39,6 +42,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> CasesAndDeathsSource",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> source1",
 				"CasesAndDeathsSource filter(continent == 'Europe' && not(isNull(country_code))) ~> FilterEuropeOnly",
 				"FilterEuropeOnly select(mapColumn(",
 				"          country,",
@@ -58,7 +63,7 @@
 				"          source,",
 				"          reported_date,",
 				"          country_special = country + country_code),",
-				"     pivotBy(indicator, ['confirmed cases ', 'deaths']),",
+				"     pivotBy(indicator, ['confirmed cases', 'deaths']),",
 				"     count = sum(daily_count),",
 				"     columnNaming: '$V_$N',",
 				"     lateral: true) ~> PivotCounts"
