@@ -52,7 +52,9 @@
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields",
-				"SelectOnlyRequiredFields pivot(columnNaming: '$N$V',",
+				"SelectOnlyRequiredFields pivot(groupBy(country,",
+				"          country_code),",
+				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> PivotCounts"
 			]
 		}
