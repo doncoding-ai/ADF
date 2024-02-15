@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "covid-traning-don"
+		},
+		"ls_ablob_covidreportingboom_connectionString": {
+			"value": ""
+		},
+		"ls_adls_covidreportingloom_accountKey": {
+			"value": ""
+		},
+		"ls_adls_covidreportingloom_properties_typeProperties_url": {
+			"value": "https://covidreportingloom.dfs.core.windows.net/"
+		},
+		"ls_http_opendata_ecdc_europa_eu_properties_typeProperties_url": {
+			"value": "@{linkedService().sourceBaseURL}"
+		},
+		"tr_ingest_population_data_properties_typeProperties_scope": {
+			"value": "/subscriptions/f4f2d56a-35c6-453f-a783-504ef6cbf3e1/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/covidreportingboom"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
