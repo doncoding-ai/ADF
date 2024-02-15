@@ -38,18 +38,10 @@
 				"     ignoreNoFilesFound: false) ~> CasesAndDeathsSource",
 				"CasesAndDeathsSource filter(continent == 'Europe' && not(isNull(country_code))) ~> FilterEuropeOnly",
 				"FilterEuropeOnly select(mapColumn(",
-				"          country,",
-				"          country_code,",
-				"          continent,",
-				"          population,",
-				"          indicator,",
-				"          daily_count,",
-				"          date,",
-				"          rate_14_day,",
-				"          source",
+				"          {} = country",
 				"     ),",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SelectOnlyRequiredFields"
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields"
 			]
 		}
 	}
