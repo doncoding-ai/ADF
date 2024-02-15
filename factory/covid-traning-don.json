@@ -1,0 +1,9 @@
+{
+	"name": "covid-traning-don",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "862f10ae-c835-4c48-8fa7-071105732ec8",
+		"tenantId": "d3d18101-4c65-4933-97cb-51e1569fe116"
+	}
+}
