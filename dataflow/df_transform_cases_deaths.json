@@ -21,7 +21,7 @@
 					"name": "SelectOnlyRequiredFields"
 				},
 				{
-					"name": "pivot1"
+					"name": "PivotCounts"
 				}
 			],
 			"scriptLines": [
@@ -53,7 +53,7 @@
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields",
 				"SelectOnlyRequiredFields pivot(columnNaming: '$N$V',",
-				"     lateral: true) ~> pivot1"
+				"     lateral: true) ~> PivotCounts"
 			]
 		}
 	}
