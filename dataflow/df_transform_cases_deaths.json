@@ -57,7 +57,7 @@
 				"          population,",
 				"          source,",
 				"          reported_date,",
-				"          country),",
+				"          {} = ERROR_FUNCTION('')),",
 				"     pivotBy(indicator, ['confirmed cases ', 'deaths']),",
 				"     count = sum(daily_count),",
 				"     columnNaming: '$V_$N',",
