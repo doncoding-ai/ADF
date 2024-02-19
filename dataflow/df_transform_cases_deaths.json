@@ -21,7 +21,7 @@
 			],
 			"sinks": [
 				{
-					"name": "sink1"
+					"name": "CasesAndDeathsSink"
 				}
 			],
 			"transformations": [
@@ -107,7 +107,7 @@
 				"SelectForSink sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true) ~> CasesAndDeathsSink"
 			]
 		}
 	}
