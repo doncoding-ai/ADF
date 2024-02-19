@@ -31,7 +31,7 @@
 					"name": "PivotCounts"
 				},
 				{
-					"name": "lookup1"
+					"name": "LookupCountry"
 				}
 			],
 			"scriptLines": [
@@ -67,8 +67,8 @@
 				"          indicator,",
 				"          daily_count,",
 				"          source,",
-				"          each(match(name == 'date'),",
-				"               'reported' + '_date' = $$)",
+				"          each(match(name=='date'),",
+				"               'reported'+'_date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> SelectOnlyRequiredFields",
@@ -77,15 +77,15 @@
 				"          population,",
 				"          source,",
 				"          reported_date,",
-				"          country_special = country + country_code),",
+				"          country_special = country+country_code),",
 				"     pivotBy(indicator, ['confirmed cases', 'deaths']),",
 				"     count = sum(daily_count),",
 				"     columnNaming: '$V_$N',",
 				"     lateral: true) ~> PivotCounts",
-				"PivotCounts lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"PivotCounts, CountryLookup lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
 				"     multiple: false,",
 				"     pickup: 'any',",
-				"     broadcast: 'auto')~> lookup1"
+				"     broadcast: 'auto')~> LookupCountry"
 			]
 		}
 	}
