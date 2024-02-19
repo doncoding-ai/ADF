@@ -951,10 +951,12 @@
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 15,
+						"frequency": "Day",
+						"interval": 20,
 						"startTime": "2024-02-08T21:12:00",
-						"timeZone": "E. Africa Standard Time"
+						"endTime": "2024-02-20T15:07:21",
+						"timeZone": "E. Africa Standard Time",
+						"schedule": {}
 					}
 				}
 			},
