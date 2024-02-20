@@ -134,7 +134,7 @@
 				"          population,",
 				"          reported_year_week,",
 				"          source),",
-				"     pivotBy(indicator),",
+				"     pivotBy(indicator, ['Weekly new h']),",
 				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> PivotWeekly"
 			]
