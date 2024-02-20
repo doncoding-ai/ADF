@@ -41,7 +41,7 @@
 					"name": "SplitDailyFromWeekly"
 				},
 				{
-					"name": "derivedColumn1"
+					"name": "DerivedECDCYearWeek"
 				}
 			],
 			"scriptLines": [
@@ -114,7 +114,7 @@
 				"     skipDuplicateMapOutputs: true) ~> SelectRequiredFields2",
 				"SelectRequiredFields2 split(indicator == 'Weekly new hospital admissions per 100k' || indicator == 'Weekly new ICU admissions per 100k',",
 				"     disjoint: false) ~> SplitDailyFromWeekly@(Weekly, Daily)",
-				"DimDateSource derive() ~> derivedColumn1"
+				"DimDateSource derive(ecdc_year_week = ERROR_FUNCTION('')) ~> DerivedECDCYearWeek"
 			]
 		}
 	}
