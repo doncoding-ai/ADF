@@ -29,6 +29,9 @@
 				},
 				{
 					"name": "SelectRequiredFields2"
+				},
+				{
+					"name": "split1"
 				}
 			],
 			"scriptLines": [
@@ -81,7 +84,9 @@
 				"          population",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SelectRequiredFields2"
+				"     skipDuplicateMapOutputs: true) ~> SelectRequiredFields2",
+				"SelectRequiredFields2 split(ERROR_FUNCTION(''),",
+				"     disjoint: false) ~> split1@(, )"
 			]
 		}
 	}
