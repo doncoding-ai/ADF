@@ -114,7 +114,7 @@
 				"     skipDuplicateMapOutputs: true) ~> SelectRequiredFields2",
 				"SelectRequiredFields2 split(indicator == 'Weekly new hospital admissions per 100k' || indicator == 'Weekly new ICU admissions per 100k',",
 				"     disjoint: false) ~> SplitDailyFromWeekly@(Weekly, Daily)",
-				"DimDateSource derive(ecdc_year_week = ERROR_FUNCTION('')) ~> DerivedECDCYearWeek"
+				"DimDateSource derive(ecdc_year_week = year + '-W' + lpad(week_of_year, 2, '0')) ~> DerivedECDCYearWeek"
 			]
 		}
 	}
