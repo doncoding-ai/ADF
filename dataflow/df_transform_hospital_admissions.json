@@ -31,7 +31,7 @@
 					"name": "SelectRequiredFields2"
 				},
 				{
-					"name": "split1"
+					"name": "SplitDailyFromWeekly"
 				}
 			],
 			"scriptLines": [
@@ -86,7 +86,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> SelectRequiredFields2",
 				"SelectRequiredFields2 split(ERROR_FUNCTION(''),",
-				"     disjoint: false) ~> split1@(, )"
+				"     disjoint: false) ~> SplitDailyFromWeekly@(Weekly, Daily)"
 			]
 		}
 	}
